@@ -2,14 +2,14 @@
 <html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Roof Softwash Price Calculator</title>
     <link rel="stylesheet" href="/styles/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="theme-toggle">
-        <button id="themeToggle" class="theme-toggle-btn">
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
             <span class="light-icon">☀️</span>
             <span class="dark-icon">🌙</span>
         </button>
@@ -49,21 +49,25 @@
                 <label for="horizontalArea">Horizontal Roof Area (sq ft)</label>
                 <div class="input-wrapper">
                     <input 
-                        type="number" 
+                        type="number"
+                        inputmode="numeric"
+                        pattern="[0-9]*"
                         id="horizontalArea" 
                         required 
                         min="0" 
                         step="1"
                         placeholder="Enter roof area (e.g., 1500)"
+                        aria-describedby="areaHint"
                     >
                     <span class="unit">sq ft</span>
                 </div>
+                <span id="areaHint" class="visually-hidden">Enter the horizontal roof area in square feet</span>
             </div>
             
             <div class="input-group">
                 <label for="slopeCategory">Roof Slope Category</label>
                 <div class="select-wrapper tooltip-container">
-                    <select id="slopeCategory" required>
+                    <select id="slopeCategory" required aria-describedby="slopeHint">
                         <option value="" disabled selected>Select slope category</option>
                         <option value="A" data-tooltip="Low Slope: Up to 3/12 pitch - Typical for some commercial buildings">A - Low Slope (≤ 3/12)</option>
                         <option value="B" data-tooltip="Standard: 4/12 to 6/12 pitch - Common for residential homes">B - Standard (4/12 - 6/12)</option>
@@ -72,6 +76,7 @@
                     </select>
                     <div class="tooltip"></div>
                 </div>
+                <span id="slopeHint" class="visually-hidden">Select the appropriate roof slope category based on the pitch diagram</span>
             </div>
 
             <div class="button-group">
