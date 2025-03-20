@@ -115,7 +115,7 @@ function displayResults(horizontalArea, slopeCategory, price) {
         </div>
         <div class="result-item">
             <span>Slope Category:</span>
-            <span>${slopeCategory} (${SLOPE_FACTORS[slopeCategory]}x)</span>
+            <span>${slopeCategory}</span>
         </div>
         <div class="result-item">
             <span>Actual Surface Area:</span>
