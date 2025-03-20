@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roof Softwash Price Calculator</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggle" class="theme-toggle-btn">
+            <span class="light-icon">☀️</span>
+            <span class="dark-icon">🌙</span>
+        </button>
+    </div>
+
+    <div class="calculator-container">
+        <header class="calculator-header">
+            <h1>Roof Softwash Price Calculator</h1>
+            <p class="subtitle">Calculate accurate pricing based on roof area and slope</p>
+        </header>
+
+        <div class="pitch-diagram-container">
+            <h3>Roof Pitch Guide</h3>
+            <div class="pitch-diagram">
+                <svg viewBox="0 0 300 200" class="pitch-svg">
+                    <!-- Base line -->
+                    <line x1="50" y1="150" x2="250" y2="150" stroke="currentColor" stroke-width="2"/>
+                    <!-- Category A (3/12) -->
+                    <line x1="50" y1="150" x2="250" y2="112.5" class="pitch-line category-a" stroke="currentColor" stroke-width="2"/>
+                    <!-- Category B (6/12) -->
+                    <line x1="50" y1="150" x2="250" y2="75" class="pitch-line category-b" stroke="currentColor" stroke-width="2"/>
+                    <!-- Category C (9/12) -->
+                    <line x1="50" y1="150" x2="250" y2="37.5" class="pitch-line category-c" stroke="currentColor" stroke-width="2"/>
+                    <!-- Category D (12/12) -->
+                    <line x1="50" y1="150" x2="250" y2="0" class="pitch-line category-d" stroke="currentColor" stroke-width="2"/>
+                    <!-- Labels -->
+                    <text x="260" y="112.5" class="pitch-label">A (3/12)</text>
+                    <text x="260" y="75" class="pitch-label">B (6/12)</text>
+                    <text x="260" y="37.5" class="pitch-label">C (9/12)</text>
+                    <text x="260" y="0" class="pitch-label">D (12/12)</text>
+                </svg>
+            </div>
+        </div>
+
+        <form id="calculatorForm" class="calculator-form">
+            <div class="input-group">
+                <label for="horizontalArea">Horizontal Roof Area (sq ft)</label>
+                <div class="input-wrapper">
+                    <input 
+                        type="number" 
+                        id="horizontalArea" 
+                        required 
+                        min="0" 
+                        step="1"
+                        placeholder="Enter roof area (e.g., 1500)"
+                    >
+                    <span class="unit">sq ft</span>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="slopeCategory">Roof Slope Category</label>
+                <div class="select-wrapper tooltip-container">
+                    <select id="slopeCategory" required>
+                        <option value="" disabled selected>Select slope category</option>
+                        <option value="A" data-tooltip="Low Slope: Up to 3/12 pitch - Typical for some commercial buildings">A - Low Slope (≤ 3/12)</option>
+                        <option value="B" data-tooltip="Standard: 4/12 to 6/12 pitch - Common for residential homes">B - Standard (4/12 - 6/12)</option>
+                        <option value="C" data-tooltip="Steep: 7/12 to 9/12 pitch - Challenging walkability">C - Steep (7/12 - 9/12)</option>
+                        <option value="D" data-tooltip="Very Steep: 10/12 or greater - Requires special safety equipment">D - Very Steep (≥ 10/12)</option>
+                    </select>
+                    <div class="tooltip"></div>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary">Calculate Price</button>
+                <button type="reset" class="btn btn-secondary">Clear</button>
+            </div>
+        </form>
+
+        <div id="results" class="results-container">
+            <!-- Results will be inserted here -->
+        </div>
+
+        <footer class="calculator-footer">
+            <div class="info-box">
+                <h3>About the Calculation</h3>
+                <p>Price is calculated using:</p>
+                <ul>
+                    <li>Base rate: $0.50 per square foot</li>
+                    <li>Slope multiplier based on roof pitch</li>
+                    <li>Total horizontal roof area</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="scripts/calculator.js"></script>
+</body>
+</html> 

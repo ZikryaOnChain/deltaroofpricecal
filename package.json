@@ -1,0 +1,29 @@
+{
+    "name": "delta-roof-price-calculator",
+    "version": "1.0.0",
+    "description": "A modern web application for calculating roof softwash pricing based on area and slope factors",
+    "main": "index.html",
+    "scripts": {
+        "start": "serve",
+        "dev": "serve"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ZikryaOnChain/deltaroofpricecal.git"
+    },
+    "keywords": [
+        "roof",
+        "calculator",
+        "pricing",
+        "softwash"
+    ],
+    "author": "ZikryaOnChain",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ZikryaOnChain/deltaroofpricecal/issues"
+    },
+    "homepage": "https://github.com/ZikryaOnChain/deltaroofpricecal#readme",
+    "devDependencies": {
+        "serve": "^14.2.1"
+    }
+} 
